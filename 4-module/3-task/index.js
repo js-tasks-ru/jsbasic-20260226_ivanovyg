@@ -3,11 +3,12 @@ function highlight(table) {
     // Определить присутствует ли аттрибут
     if (row.cells[3].hasAttribute('data-available')) {
       // Проверить значение аттрибута и назанчить стиль строке
-      if (row.cells[3].dataset.available === 'true') {
-        row.classList.add('available');
-      } else {
-        row.classList.add('unavailable');
-      }
+      row.classList.add(row.cells[3].dataset.available === 'true' ? 'available' : 'unavailable');
+        //      if (row.cells[3].dataset.available === 'true') {
+//        row.classList.add('available');
+//      } else {
+//        row.classList.add('unavailable');
+//      }
     } else {
       // Скрыть строку, если аттрибута нет
       row.setAttribute('hidden', 'true');
