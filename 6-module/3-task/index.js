@@ -36,8 +36,7 @@ export default class Carousel {
       carouselInner.insertAdjacentHTML('beforeend', oneSlide);
     }
     
-    let totalSlides        = carouselInner.children.length;
-    let carouselInnerWidth = carouselInner.querySelector('img').width;
+    let totalSlides   = carouselInner.children.length;
     let slidePosition = 0;
     let slideNumber   = 1;
 
@@ -72,7 +71,7 @@ export default class Carousel {
       }
 
       // Обновить позицию слайда
-      slidePosition -= carouselInnerWidth;
+      slidePosition -= carouselInner.querySelector('img').width;
 
       // Изменить позицию на странице
       carouselInner.style.transform = `translateX(${slidePosition}px)`;
@@ -93,7 +92,7 @@ export default class Carousel {
       }
 
       // Обновить позицию слайда
-      slidePosition += carouselInnerWidth;
+      slidePosition += carouselInner.querySelector('img').width;
 
       // Изменить позицию на странице
       carouselInner.style.transform = `translateX(${slidePosition}px)`;
